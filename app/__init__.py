@@ -8,6 +8,7 @@ from flask_cors import CORS
 from flask import jsonify
 import logging
 from .routes.status import status_bp
+from .routes.data import data_bp
 
 app = FlaskAPI(__name__)
 app.logger.setLevel(logging.INFO)
@@ -17,6 +18,7 @@ Environment(app)
 Session(app)
 
 app.register_blueprint(status_bp)
+app.register_blueprint(data_bp)
 
 
 # Generic error handling
